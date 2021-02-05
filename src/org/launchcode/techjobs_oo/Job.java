@@ -38,6 +38,19 @@ public class Job {
         Job that = (Job) o;
         return id == that.id;
     }
+    @Override
+    public String toString() {
+        String jobString =
+                "\n" +
+                "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n" +
+                "\n";
+        return jobString;
+    }
 
     @Override
     public int hashCode() {

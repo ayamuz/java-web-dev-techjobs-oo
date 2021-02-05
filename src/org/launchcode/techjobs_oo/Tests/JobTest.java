@@ -30,13 +30,30 @@ public class JobTest {
         assertEquals("Product tester", test_job3.getName());
         assertEquals("ACME", test_job3.getEmployer().getValue());
         assertEquals("Desert", test_job3.getLocation().getValue());
-        assertEquals("Quality Control", test_job3.getPositionType());
-        assertEquals("Persistence", test_job3.getCoreCompetency());
+        assertEquals("Quality control", test_job3.getPositionType().getValue());
+        assertEquals("Persistence", test_job3.getCoreCompetency().getValue());
 
     }
     @Test
     public void testJobsForEquality() {
         assertFalse(test_job3.getId() == test_job4.getId());
+    }
+    @Test
+    public void testToStringEmpty() {
+        assertEquals('\n', test_job4.toString().charAt(0));
+        assertEquals('\n', test_job4.toString().charAt(test_job4.toString().length() -1));
+    }
+    @Test
+    public void testToStringLabels() {
+        assertEquals(
+                "\n" +
+                "ID: " + test_job4.getId() + "\n" +
+                "Name: " + test_job4.getName() + "\n" +
+                "Employer: " + test_job4.getEmployer().getValue() + "\n" +
+                "Location: " + test_job4.getLocation().getValue() + "\n" +
+                "Position Type: " + test_job4.getPositionType().getValue() + "\n" +
+                "Core Competency: " + test_job4.getCoreCompetency().getValue() + "\n" +
+                "\n", test_job4.toString());
     }
 
 }
